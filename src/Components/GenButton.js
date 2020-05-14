@@ -1,28 +1,9 @@
 import React, { useState } from "react";
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-  IonCard,
-  IonCardHeader,
-  IonCardSubtitle,
-  IonRadioGroup,
-  IonRadio,
-  IonListHeader,
-  IonCardTitle,
-  IonCardContent,
-  IonItem,
-  IonIcon,
-  IonLabel,
-  IonButton,
-  IonCheckbox,
-  IonList,
-  IonItemDivider,
-} from "@ionic/react";
+import { Howl, Howler } from "howler";
+import { IonCard, IonButton } from "@ionic/react";
 import "@ionic/core/css/ionic.bundle.css";
 var playColor = "dark";
+var chords = [];
 function GenButton() {
   const [playStatus, setPlay] = useState(true);
 
@@ -31,11 +12,27 @@ function GenButton() {
       setPlay(false);
       playColor = "success";
     }
-    console.log("Generate");
+
+    chords = [];
+
+    for (let i = 0; i < 4; i++) {
+      chords.push(Math.floor(Math.random() * Math.floor(24)) + 1);
+    }
+    console.log(chords);
   }
 
   function playChords() {
-    console.log("Play!");
+    if (playColor !== "success") {
+      console.log("You need to generate first!");
+    } else {
+      for (let i = 0; i < 4; i++) {
+        const sound = new Howl({
+          src: [chords[i] + ".mp3"],
+        });
+        sound.play();
+        console.log(chords[i]);
+      }
+    }
   }
 
   return (

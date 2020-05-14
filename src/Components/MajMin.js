@@ -1,25 +1,11 @@
 import React, { useState } from "react";
 import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-  IonCard,
-  IonCardHeader,
-  IonCardSubtitle,
   IonRadioGroup,
   IonRadio,
   IonListHeader,
-  IonCardTitle,
-  IonCardContent,
   IonItem,
-  IonIcon,
   IonLabel,
-  IonButton,
-  IonCheckbox,
   IonList,
-  IonItemDivider,
 } from "@ionic/react";
 import "@ionic/core/css/ionic.bundle.css";
 
