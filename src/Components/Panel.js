@@ -70,14 +70,6 @@ function Panel(props) {
           </IonRadioGroup>
           <MajMin visibilty={visibilty} />
         </IonList>
-        <IonButton
-          expand="block"
-          shape="round"
-          strong="true"
-          onClick={() => getGenParams()}
-        >
-          Generate
-        </IonButton>
       </IonCardContent>
     </IonCard>
   );
