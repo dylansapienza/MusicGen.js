@@ -31,9 +31,12 @@ function GenButton() {
       setPlay(false);
       playColor = "success";
     }
+    console.log("Generate");
   }
 
-  function playChords() {}
+  function playChords() {
+    console.log("Play!");
+  }
 
   return (
     <IonCard>
